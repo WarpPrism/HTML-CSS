@@ -10,6 +10,7 @@ var context;
 var n;
 var Fi;
 var index;
+var text;
 
 window.onload = function() {
 	init();
@@ -28,6 +29,7 @@ function init() {
 	span1 = curtain1.getElementsByTagName("span");
 	span2 = curtain2.getElementsByTagName("span");
 	garden = document.getElementById("garden");
+	text = document.getElementById("text");
 	canvas = document.getElementById("canvas");
 	context = canvas.getContext("2d");
 	context.globalCompositeOperation = "lighter";
@@ -39,11 +41,11 @@ function init() {
 
 function openCurtain() {
 	span1[0].style.opacity = "1";
-	span1[0].style.top = "300px";
+	span1[0].style.top = "250px";
 	span1[0].style.transform = "rotate(360deg)";
 
 	span2[0].style.opacity = "1";
-	span2[0].style.top = "300px";
+	span2[0].style.top = "250px";
 	span2[0].style.transform = "rotate(360deg)";
 
 	curtain1.style.width = "0px";
@@ -105,30 +107,37 @@ function startLissajousAnimation() {
 		if (s >= 50) {
 			clearInterval(a);
 			clearCanvas();
+			clearCanvas();
 			switch (index) {
 				case 1:
 					Fi = Math.PI / 2;
 					startLissajousAnimation();
+					text.innerHTML = "x = 200sin(t)<br />y = 200sin(t + PI / 2)<br />x^2 + y^2 = 200^2<br />Let's leading a ring-like life.";
 					break;
 				case 2:
 					Fi = Math.PI / 3;
 					startLissajousAnimation();
+					text.innerHTML = "x = 200sin(t)<br />y = 200sin(t + PI / 3)<br />Ellipse<br />You provide the orbit for my life.";
 					break;
 				case 3:
 					n = 2;
 					Fi = Math.PI / 2;
 					startLissajousAnimation();
+					text.innerHTML = "x = 200sin(t)<br />y = 200sin(2t + PI / 2)<br />Parabola<br />I start to rise when meeting you.";
 					break;
 				case 4:
 					Fi = 0;
 					startLissajousAnimation();
+					text.innerHTML = "x = 200sin(t)<br />y = 200sin(2t)<br />Lemniscate<br />Combine together.";
 					break;
 				case 5:
 					Fi = Math.PI / 3;
 					startLissajousAnimation();
+					text.innerHTML = "x = 200sin(t)<br />y = 200sin(2t)<br />Besace<br />Getting beautiful.";
 					break;
 				case 6:
 					startHeartAnimation();
+					text.innerHTML = "x = 15 * 16[sin(t)]^3<br />y = -16 * (13cost - 5cos2t - 2cos3t - cos4t)<br />Heart<br />I am fond of you.";
 				default:
 					break;
 			}
