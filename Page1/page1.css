@@ -1,0 +1,60 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+#wrap {
+	position: relative;
+	height: 650px;
+}
+
+#curtain1 {
+	width: 50%;
+	height: 100%;
+	position: relative;
+	float: left;
+	background: #FFF;
+	transition:all 3s ease-in-out 3s;
+}
+
+#curtain2 {
+	width: 50%;
+	height: 100%;
+	position: relative;
+	float: right;
+	background: #FFF;
+	transition:all 3s ease-in-out 3s;
+}
+#curtain1 span {
+	display: block;
+	font-size: 60px;
+	letter-spacing: 7px;
+	font-family: 华文行楷;
+	color: #BC2420;
+	text-decoration: underline;
+	opacity: 0;
+	position: absolute;
+	top:0px;
+	right: 0px;
+	transition:all 2s ease-in-out;
+}
+
+#curtain2 span {
+	display: block;
+	font-size: 60px;
+	letter-spacing: 7px;
+	font-family: 华文行楷;
+	color: #BC2420;
+	text-decoration: underline;
+	opacity: 0;
+	position: absolute;
+	top:0px;
+	left: 0px;
+	transition:all 2s ease-in-out;
+}
+
+#garden {
+	position: absolute;
+	left: 600px;
+	border: 2px solid #000;
+}
