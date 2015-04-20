@@ -119,13 +119,16 @@ function startLissajousAnimation() {
 			clearCanvas();
 			clearCanvas();
 			switch (index) {
-				/*case 1:
+				//初始为线段 line
+				//圆 circle
+				case 1:
 					Fi = Math.PI / 2;
 					startLissajousAnimation();
 					textdiv.style.width = "270px";
 					changeText();
 					text2.innerHTML = "x = 200sin(t)<br />y = 200sin(t + PI / 2)<br />x^2 + y^2 = 200^2<br />Let's leading a ring-like life.";
 					break;
+				//椭圆
 				case 2:
 					Fi = Math.PI / 3;
 					startLissajousAnimation();
@@ -133,6 +136,7 @@ function startLissajousAnimation() {
 					changeText();
 					text1.innerHTML = "x = 200sin(t)<br />y = 200sin(t + PI / 3)<br />Ellipse<br />You provide the orbit for my life.";
 					break;
+				//抛物线
 				case 3:
 					n = 2;
 					Fi = Math.PI / 2;
@@ -141,24 +145,27 @@ function startLissajousAnimation() {
 					changeText();
 					text2.innerHTML = "x = 200sin(t)<br />y = 200sin(2t + PI / 2)<br />Parabola<br />I start to rise when meeting you.";
 					break;
+				//执罗诺双纽线
 				case 4:
 					Fi = 0;
 					startLissajousAnimation();
 					textdiv.style.width = "230px";
 					changeText();
 					text1.innerHTML = "x = 200sin(t)<br />y = 200sin(2t)<br />Lemniscate<br />Combine together.";
-					break;*/
-				case 1:
+					break;
+				//besace曲线
+				case 5:
 					Fi = Math.PI / 3;
 					startLissajousAnimation();
 					textdiv.style.width = "220px";
 					changeText();
 					text2.innerHTML = "x = 200sin(t)<br />y = 200sin(2t)<br />Besace<br />Getting beautiful.";
 					break;
-				case 2:
+				//心形线
+				case 6:
 					startHeartAnimation();
 					text2.style.display = "none";
-					textdiv.style.left = "720px";
+					textdiv.style.left = "730px";
 					textdiv.style.top = "190px";
 					textdiv.style.width = "370px";
 					textdiv.style.height = "100px";
