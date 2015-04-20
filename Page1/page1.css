@@ -1,11 +1,12 @@
 * {
 	margin: 0px;
 	padding: 0px;
+	font-family: "Microsoft Yahei";
 }
 
 #wrap {
 	position: relative;
-	height: 650px;
+	height: 600px;
 }
 
 #curtain1 {
@@ -56,22 +57,80 @@
 #garden {
 	position: absolute;
 	top: 20px;
-	left: 600px;
-	box-shadow: 5px 5px 10px lightblue;
+	left: 650px;
+	box-shadow: 5px 5px 10px gray;
 }
 
 #textdiv {
 	position: absolute;
-	top:270px;
-	left: 170px;
+	top:250px;
+	left: 180px;
 	padding: 15px;
-	box-shadow: 5px 5px 10px lightblue;
+	width: 200px;
+	height: 80px;
+	box-shadow: 5px 5px 10px gray;
+
+	transition: all 0.5s ease-in-out;
 }
 
-#text {
+#textdiv:hover {
+	color: #FFF;
+	background-color: gray;
+	box-shadow: 5px 5px 10px #FFF;
+}
+
+#textdiv:hover text1 {
+	color: #FFF;
+}
+
+#textdiv:hover text2 {
+	color: #FFF;
+}
+
+#text1 {
 	display: block;
 	font-size: 17px;
-	opacity: 1;
+	letter-spacing: 1px;
+	opacity: 0;
+	position: absolute;
+
+	transition: all 1.5s ease-in-out;
+}
+
+#text2 {
+	display: block;
+	font-size: 17px;
+	letter-spacing: 1px;
+	opacity: 0;
+	position: absolute;
+
+	transition: all 1.5s ease-in-out;
+}
+
+#wordsdiv {
+	position: absolute;
+	top: 200px;
+	left: 180px;
+	padding: 15px;
+	opacity: 0;
+	transition: all 2.5s ease-in-out;
+}
+
+#words {
+	display: block;
+	font-size: 17px;
+	letter-spacing: 1px;
+}
+
+#foot {
+	width: 300px;
+	margin: 15px auto 0px;
+	opacity: 0;
 
 	transition: all 2s ease-in-out;
+}
+
+#foot p {
+	text-align: center;
+	font-size: 15px;
 }

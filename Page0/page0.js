@@ -24,6 +24,7 @@ function init() {
 
 function openCurtain() {
 	curtain.style.height = "0px";
+	curtain.style.background = "lightblue";
 	curtain.style.opacity = "0";
 }
 

@@ -10,12 +10,16 @@ var context;
 var n;
 var Fi;
 var index;
-var text;
+var textdiv;
+var text1;
+var text2;
+var wordsdiv;
+var foot;
 
 window.onload = function() {
 	init();
 	openCurtain();
-	setTimeout(disableCurtain, 5100);
+	setTimeout(disableCurtain, 5000);
 	setTimeout(startLissajousAnimation, 6000);
 }
 
@@ -29,7 +33,11 @@ function init() {
 	span1 = curtain1.getElementsByTagName("span");
 	span2 = curtain2.getElementsByTagName("span");
 	garden = document.getElementById("garden");
-	text = document.getElementById("text");
+	textdiv = document.getElementById("textdiv");
+	text1 = document.getElementById("text1");
+	text2 = document.getElementById("text2");
+	wordsdiv = document.getElementById("wordsdiv");
+	foot = document.getElementById("foot");
 	canvas = document.getElementById("canvas");
 	context = canvas.getContext("2d");
 	context.globalCompositeOperation = "lighter";
@@ -60,6 +68,8 @@ function openCurtain() {
 function disableCurtain() {
 	wrap.removeChild(curtain1);
 	wrap.removeChild(curtain2);
+	text1.style.opacity = "1";
+	foot.style.opacity = "1";
 }
 
 //Heart curve
@@ -67,7 +77,7 @@ function getHeartCurveCoordinate(s) {
 	var t = s / Math.PI;
 	var x = 15 * (16 * Math.pow(Math.sin(t), 3));
 	var y = -16 * (13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t));
-	return new Array(300 + x, 280 + y);
+	return new Array(270 + x, 225 + y);
 }
 
 //利萨茹(Lissajous)曲线
@@ -75,7 +85,7 @@ function getLissajousCurveCoordinate(s, n, Fi) {
 	var t = s;
 	var x = 200 * Math.sin(t);
 	var y = 200 * Math.sin(n * t + Fi);
-	return new Array(300 + x, 280 + y);
+	return new Array(280 + x, 270 + y);
 }
 
 // y = x^3
@@ -109,35 +119,56 @@ function startLissajousAnimation() {
 			clearCanvas();
 			clearCanvas();
 			switch (index) {
-				case 1:
+				/*case 1:
 					Fi = Math.PI / 2;
 					startLissajousAnimation();
-					text.innerHTML = "x = 200sin(t)<br />y = 200sin(t + PI / 2)<br />x^2 + y^2 = 200^2<br />Let's leading a ring-like life.";
+					textdiv.style.width = "270px";
+					changeText();
+					text2.innerHTML = "x = 200sin(t)<br />y = 200sin(t + PI / 2)<br />x^2 + y^2 = 200^2<br />Let's leading a ring-like life.";
 					break;
 				case 2:
 					Fi = Math.PI / 3;
 					startLissajousAnimation();
-					text.innerHTML = "x = 200sin(t)<br />y = 200sin(t + PI / 3)<br />Ellipse<br />You provide the orbit for my life.";
+					textdiv.style.width = "300px";
+					changeText();
+					text1.innerHTML = "x = 200sin(t)<br />y = 200sin(t + PI / 3)<br />Ellipse<br />You provide the orbit for my life.";
 					break;
 				case 3:
 					n = 2;
 					Fi = Math.PI / 2;
 					startLissajousAnimation();
-					text.innerHTML = "x = 200sin(t)<br />y = 200sin(2t + PI / 2)<br />Parabola<br />I start to rise when meeting you.";
+					textdiv.style.width = "320px";
+					changeText();
+					text2.innerHTML = "x = 200sin(t)<br />y = 200sin(2t + PI / 2)<br />Parabola<br />I start to rise when meeting you.";
 					break;
 				case 4:
 					Fi = 0;
 					startLissajousAnimation();
-					text.innerHTML = "x = 200sin(t)<br />y = 200sin(2t)<br />Lemniscate<br />Combine together.";
-					break;
-				case 5:
+					textdiv.style.width = "230px";
+					changeText();
+					text1.innerHTML = "x = 200sin(t)<br />y = 200sin(2t)<br />Lemniscate<br />Combine together.";
+					break;*/
+				case 1:
 					Fi = Math.PI / 3;
 					startLissajousAnimation();
-					text.innerHTML = "x = 200sin(t)<br />y = 200sin(2t)<br />Besace<br />Getting beautiful.";
+					textdiv.style.width = "220px";
+					changeText();
+					text2.innerHTML = "x = 200sin(t)<br />y = 200sin(2t)<br />Besace<br />Getting beautiful.";
 					break;
-				case 6:
+				case 2:
 					startHeartAnimation();
-					text.innerHTML = "x = 15 * 16[sin(t)]^3<br />y = -16 * (13cost - 5cos2t - 2cos3t - cos4t)<br />Heart<br />I am fond of you.";
+					text2.style.display = "none";
+					textdiv.style.left = "720px";
+					textdiv.style.top = "190px";
+					textdiv.style.width = "370px";
+					textdiv.style.height = "100px";
+					textdiv.style.boxShadow = "0px 0px 0px #FFF";
+					text1.style.letterSpacing = "0px";
+					text1.style.textAlign = "center";
+					text1.style.opacity = "1";
+					textdiv.style.transition = "all 1.5s linear";
+					text1.style.transition = "all 2s linear";
+					text1.innerHTML = "x = 15 * 16[sin(t)]^3<br />y = -16 * (13cost - 5cos2t - 2cos3t - cos4t)<br />Heart<br />I am fond of you.";
 				default:
 					break;
 			}
@@ -165,8 +196,9 @@ function startHeartAnimation() {
 			b.push(h);
 			garden.createRandomBloom(h[0], h[1])
 		}
-		if (s >= 100) {
+		if (s >= -60) {
 			clearInterval(a);
+			wordsdiv.style.opacity = "1";
 			return;
 		} else {
 			s += 0.2
@@ -177,4 +209,26 @@ function startHeartAnimation() {
 function clearCanvas() {
 	context.clearRect(0, 0, 600, 600);
 	canvas.width = canvas.width;
+}
+
+//bad code with high CPU consumption.
+/*function sleep(millseconds) {
+	var now = new Date();
+	var exitTime = now.getTime() + millseconds; 
+	while (true) {
+		now = new Date();
+		if (now.getTime() >= exitTime) {
+			return;
+		}
+	}
+}*/
+
+function changeText() {
+	if (text1.style.opacity == "0") {
+		text1.style.opacity = "1";
+		text2.style.opacity = "0";
+	} else if (text1.style.opacity == "1") {
+		text2.style.opacity = "1";
+		text1.style.opacity = "0";
+	}
 }

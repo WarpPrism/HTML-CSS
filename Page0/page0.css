@@ -6,7 +6,7 @@
 #curtain {
 	width: 100%;
 	height: 700px;
-	background: url(./src/curtain.jpg);
+	background: #FFF;
 
 	-webkit-transition: all 3s ease-in-out;
 	-ms-transition: all 3s ease-in-out;
@@ -14,11 +14,11 @@
 	-o-transition: all 3s ease-in-out;
 }
 
-#curtain img {
+/* #curtain img {
 	position: fixed;
 	top: 250px;
 	left:630px;
-}
+} */
 
 #headdiv {
 	width: 100%;
