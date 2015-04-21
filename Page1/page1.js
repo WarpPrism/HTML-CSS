@@ -1,3 +1,7 @@
+// ugly codes  T_T
+// copyright reserved by ZhouJihao
+// 2015
+
 var curtain1;
 var curtain2;
 var span1;
@@ -73,6 +77,7 @@ function disableCurtain() {
 }
 
 //Heart curve
+
 function getHeartCurveCoordinate(s) {
     var t = s / Math.PI;
     var x = 15 * (16 * Math.pow(Math.sin(t), 3));
@@ -81,6 +86,7 @@ function getHeartCurveCoordinate(s) {
 }
 
 //利萨茹(Lissajous)曲线
+
 function getLissajousCurveCoordinate(s, n, Fi) {
     var t = s;
     var x = 200 * Math.sin(t);
@@ -124,24 +130,25 @@ function startLissajousAnimation() {
                 case 1:
                     Fi = Math.PI / 2;
                     startLissajousAnimation();
-                    textdiv.style.width = "270px";
+                    textdiv.style.width = "320px";
                     changeText();
-                    text2.innerHTML = "x = 200sin(t)<br />y = 200sin(t + PI / 2)<br />x^2 + y^2 = 200^2<br />Let's leading a ring-like life.";
+                    text2.innerHTML = "x = 200sin(t)<br />y = 200sin(t + PI / 2)<br />Ring/Circle<br />But I have lead a ring-like life because of you.";
                     break;
                 //椭圆
                 case 2:
                     Fi = Math.PI / 3;
                     startLissajousAnimation();
-                    textdiv.style.width = "300px";
+                    textdiv.style.width = "310px";
                     changeText();
-                    text1.innerHTML = "x = 200sin(t)<br />y = 200sin(t + PI / 3)<br />Ellipse<br />You provide the orbit for my life.";
+                    text1.innerHTML = "x = 200sin(t)<br />y = 200sin(t + PI / 3)<br />Ellipse/Orbit<br />You provide the correct orbit for my life.";
                     break;
                 //抛物线
                 case 3:
                     n = 2;
                     Fi = Math.PI / 2;
                     startLissajousAnimation();
-                    textdiv.style.width = "320px";
+                    textdiv.style.width = "300px";
+                    textdiv.style.height = "90px";
                     changeText();
                     text2.innerHTML = "x = 200sin(t)<br />y = 200sin(2t + PI / 2)<br />Parabola<br />I start to rise when meeting you.";
                     break;
@@ -149,17 +156,19 @@ function startLissajousAnimation() {
                 case 4:
                     Fi = 0;
                     startLissajousAnimation();
-                    textdiv.style.width = "230px";
+                    textdiv.style.width = "260px";
+                    textdiv.style.height = "90px";
                     changeText();
-                    text1.innerHTML = "x = 200sin(t)<br />y = 200sin(2t)<br />Lemniscate<br />Combine together.";
+                    text1.innerHTML = "x = 200sin(t)<br />y = 200sin(2t)<br />Lemniscate<br />Shall we combine together?";
                     break;
                 //besace曲线
                 case 5:
                     Fi = Math.PI / 3;
                     startLissajousAnimation();
-                    textdiv.style.width = "220px";
+                    textdiv.style.width = "250px";
+                    textdiv.style.height = "90px";
                     changeText();
-                    text2.innerHTML = "x = 200sin(t)<br />y = 200sin(2t)<br />Besace<br />Getting beautiful.";
+                    text2.innerHTML = "x = 200sin(t)<br />y = 200sin(2t)<br />Besace<br />Making life beatiful?";
                     break;
                 //心形线
                 case 6:
@@ -168,14 +177,14 @@ function startLissajousAnimation() {
                     textdiv.style.left = "730px";
                     textdiv.style.top = "190px";
                     textdiv.style.width = "370px";
-                    textdiv.style.height = "100px";
+                    textdiv.style.height = "120px";
                     textdiv.style.boxShadow = "0px 0px 0px #FFF";
                     text1.style.letterSpacing = "0.5px";
                     text1.style.textAlign = "center";
                     text1.style.opacity = "1";
                     textdiv.style.transition = "all 1.5s linear";
                     text1.style.transition = "all 2s linear";
-                    text1.innerHTML = "x = 15 * 16[sin(t)]^3<br />y = -16 * (13cost - 5cos2t - 2cos3t - cos4t)<br />Heart<br />I am fond of you.";
+                    text1.innerHTML = "x = 15 * 16[sin(t)]^3<br />y = -16 * (13cost - 5cos2t - 2cos3t - cos4t)<br />Heart<br />I am fond of you.<br />Let me take care of you.";
                 default:
                     break;
             }
@@ -206,7 +215,23 @@ function startHeartAnimation() {
         if (s >= -60) {
             clearInterval(a);
             wordsdiv.style.opacity = "1";
-           /* wordsdiv.style.boxShadow = "5px 5px 5px gray";*/
+            /* wordsdiv.style.boxShadow = "5px 5px 5px gray";*/
+            wordsdiv.onclick = function() {
+                var pattern = new RegExp("e");
+                var words = document.getElementById("words");
+                var str = words.innerHTML;
+                if (pattern.test(str)) {
+                    words.innerHTML = "有的人平庸浅薄，<br /><br />有的人金玉其外，却败絮其中。<br /><br />但不经意间，我们都会遇到一个如彩虹般炫丽的人，<br /><br />倘若如此，其他人不过是浮云而已。<br /><br />————《怦然心动》";
+                } else {
+                    words.innerHTML = "Some of us get dipped in flat,<br />Some in satin, some in gloss.<br />But every once in a while,<br />We will find someone who is iridescent.<br />And when we do,<br />Nothing else will ever compare.<br />&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;----<span>Flipped</span>";
+                }
+            }
+            /*words.onmouseout = function() {
+                var words = document.getElementById("words");
+                wordsdiv.style.background = "";
+                wordsdiv.style.color = "#000";
+                words.innerHTML = "Some of us get dipped in flat,<br />Some in satin, some in gloss.<br />But every once in a while,<br />We will find someone who is iridescent.<br />And when you do,<br />Nothing else will ever compare.";
+            }*/
             return;
         } else {
             s += 0.2

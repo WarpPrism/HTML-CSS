@@ -108,8 +108,8 @@ a:hover {
     top:250px;
     left: 180px;
     padding: 15px;
-    width: 200px;
-    height: 90px;
+    width: 300px;
+    height: 110px;
     box-shadow: 5px 5px 10px gray;
 
     transition: all 0.5s ease-in-out;
@@ -162,8 +162,8 @@ a:hover {
 
 #wordsdiv {
     position: absolute;
-    top: 200px;
-    left: 180px;
+    top: 170px;
+    left: 170px;
     padding: 15px;
     border-radius: 7px;
     opacity: 0;
@@ -176,14 +176,19 @@ a:hover {
 }
 
 #wordsdiv:hover {
-    background-color: gray;
+    background-color: pink;
     color: #FFF;
+    text-shadow: 3px 3px 3px #000;
 }
 
 #words {
     display: block;
     font-size: 17px;
     letter-spacing: 1px;
+}
+
+#words span {
+    font-style: italic;
 }
 
 #foot {
