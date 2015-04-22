@@ -4,6 +4,7 @@
 
 var curtain1;
 var curtain2;
+var endcurtain;
 var span1;
 var span2;
 var head;
@@ -34,6 +35,7 @@ function init() {
     wrap = document.getElementById("wrap");
     curtain1 = document.getElementById("curtain1");
     curtain2 = document.getElementById("curtain2");
+    endcurtain = document.getElementById("endcurtain");
     span1 = curtain1.getElementsByTagName("span");
     span2 = curtain2.getElementsByTagName("span");
     garden = document.getElementById("garden");
@@ -61,11 +63,11 @@ function openCurtain() {
     span2[0].style.transform = "rotate(360deg)";
 
     curtain1.style.width = "0px";
-    curtain1.style.opacity = "0";
+    curtain1.style.opacity = "0.3";
     curtain1.style.background = "lightblue";
 
     curtain2.style.width = "0px";
-    curtain2.style.opacity = "0";
+    curtain2.style.opacity = "0.3";
     curtain2.style.background = "lightblue";
 }
 
@@ -214,18 +216,37 @@ function startHeartAnimation() {
         }
         if (s >= -60) {
             clearInterval(a);
+            var endbtn = document.getElementById("endbtn");
+            var lang = document.getElementById("lang");
+            var theend = document.getElementById("theend");
             wordsdiv.style.opacity = "1";
-            /* wordsdiv.style.boxShadow = "5px 5px 5px gray";*/
-            wordsdiv.onclick = function() {
+            endbtn.style.opacity = "1";
+            lang.style.opacity = "1";
+            endbtn.onclick = function() {
+                theend.style.opacity = "1";
+                endcurtain.style.height = "100%";
+                /*this.style.opacity = "0";
+                lang.style.opacity = "0";*/
+                lang.innerHTML = "Thank";
+                this.innerHTML = "You";
+                lang.style.left = "400px";
+            }
+            
+            var textchange= function() {
                 var pattern = new RegExp("e");
                 var words = document.getElementById("words");
                 var str = words.innerHTML;
                 if (pattern.test(str)) {
+                    lang.innerHTML = "EN";
                     words.innerHTML = "有的人平庸浅薄，<br /><br />有的人金玉其外，却败絮其中。<br /><br />但不经意间，我们都会遇到一个如彩虹般炫丽的人，<br /><br />倘若如此，其他人不过是浮云而已。<br /><br />————《怦然心动》";
                 } else {
+                    lang.innerHTML = "CN";
                     words.innerHTML = "Some of us get dipped in flat,<br />Some in satin, some in gloss.<br />But every once in a while,<br />We will find someone who is iridescent.<br />And when we do,<br />Nothing else will ever compare.<br />&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;----<span>Flipped</span>";
                 }
             }
+
+            wordsdiv.onclick = textchange;
+            lang.onclick = textchange;
             /*words.onmouseout = function() {
                 var words = document.getElementById("words");
                 wordsdiv.style.background = "";
