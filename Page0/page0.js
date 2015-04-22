@@ -2,22 +2,22 @@ var gift;
 var tipdiv;
 var ribbon;
 var headdiv;
-var time;
+var loadtime;
 
 window.onload = function() {
     init();
     startgiftAnimation();
     startRibbonAnimation();
-    setTimeout(showTip, 8000);
-    setTimeout(showHead, 9000);
+    setTimeout(showTip, 8000 + loadtime);
+    setTimeout(showHead, 9000 + loadtime);
 }
 
 function init() {
+    loadtime = 3000;
     gift = document.getElementById("gift");
     tipdiv = document.getElementById("tipdiv");
     ribbon = document.getElementById("ribbon");
     headdiv = document.getElementById("headdiv");
-    time = 0;
 }
 
 function startgiftAnimation() {
@@ -56,12 +56,12 @@ function startgiftAnimation() {
         gift.style.left = "600px";
         gift.style.opacity = "1";
     }
-    setTimeout(animation0, time);
-    setTimeout(animation1, 1000);
-    setTimeout(animation2, 2000);
-    setTimeout(animation3, 3000);
-    setTimeout(animation4, 4000);
-    setTimeout(animation5, 5000);
+    setTimeout(animation0, 0 + loadtime);
+    setTimeout(animation1, 1000 + loadtime);
+    setTimeout(animation2, 2000 + loadtime);
+    setTimeout(animation3, 3000 + loadtime);
+    setTimeout(animation4, 4000 + loadtime);
+    setTimeout(animation5, 5000 + loadtime);
 }
 
 function startRibbonAnimation() {
@@ -79,8 +79,8 @@ function startRibbonAnimation() {
         ribbon.style.transform = "rotate(360deg)";
     }
 
-    setTimeout(animation6, 6000);
-    setTimeout(animation7, 7000);
+    setTimeout(animation6, 6000 + loadtime);
+    setTimeout(animation7, 7000 + loadtime);
 }
 
 function showTip() {

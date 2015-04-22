@@ -168,7 +168,7 @@ function startLissajousAnimation() {
                     textdiv.style.width = "250px";
                     textdiv.style.height = "90px";
                     changeText();
-                    text2.innerHTML = "x = 200sin(t)<br />y = 200sin(2t)<br />Besace<br />Making life beatiful?";
+                    text2.innerHTML = "x = 200sin(t)<br />y = 200sin(2t)<br />Besace<br />Making life beautiful?";
                     break;
                 //心形线
                 case 6:

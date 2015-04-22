@@ -1,15 +1,35 @@
 <!doctype html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <title>YouAreMyAngel</title>
     <link rel="stylesheet" href="./page0.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/demo.css">
+    <link rel="stylesheet" href="css/fakeloader.css">
+    <script src="../src/jquery.min.js"></script>
+    <script src="js/fakeloader.min.js"></script>
     <script type="text/javascript" src="./page0.js"></script>
+
 </head>
 <body>
-    <div id="headdiv"></div>
-    <div id="ribbon"></div>
-    <div><a href="../Page1/page1.html" id="gift"></a></div>
-    <div id="tipdiv"><span id="tri"></span><span id="tip">Click To Open</span></div>
+    <div id="wrap">
+        <div class="fakeloader"></div>
+        <div id="headdiv"></div>
+        <div id="ribbon"></div>
+        <div><a href="../Page1/page1.html" id="gift"></a></div>
+        <div id="tipdiv"><span id="tri"></span><span id="tip">Click To Open</span></div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $(".fakeloader").fakeLoader({
+                timeToHide:3000,
+                bgColor:"#3498db",
+                spinner:"spinner4"
+            });
+        });
+    </script>
 </body>
 </html>
