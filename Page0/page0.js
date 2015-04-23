@@ -1,3 +1,7 @@
+// ugly codes  T_T
+// copyright reserved by ZhouJihao
+// 2015
+
 var gift;
 var tipdiv;
 var ribbon;

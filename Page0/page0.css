@@ -41,11 +41,11 @@
 }
 
 #gift:hover {
-    transform: scale(1.05, 1.05);
-    -webkit-transform: scale(1.05, 1.05);
-    -ms-transform: scale(1.05, 1.05);
-    -moz-transform: scale(1.05, 1.05);
-    -o-transform: scale(1.05, 1.05);
+    transform: translate(5px, 0px);
+    -webkit-transform: translate(5px, 0px);
+    -ms-transform: translate(5px, 0px);
+    -moz-transform: translate(5px, 0px);
+    -o-transform: translate(5px, 0px);
 }
 
 #tipdiv {
@@ -68,6 +68,11 @@
 #tipdiv:hover {
     cursor: pointer;
     box-shadow: 5px 5px 5px #000;
+    background-color: #DC143C;
+}
+
+#tipdiv:hover #tri {
+    border-top-color: #DC143C;
 }
 
 #tip {
@@ -84,6 +89,12 @@
     overflow: hidden;
     border: 7px solid transparent;
     border-top-color: #F08080;
+
+    transition: all 1s ease-in-out;
+    -webkit-transition: all 1s ease-in-out;
+    -ms-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
 }
 
 #ribbon {
