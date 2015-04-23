@@ -314,3 +314,8 @@ a:hover {
     text-decoration: none;
     color: #FFF;
 }
+
+#restart:hover {
+    color: purple;
+    text-decoration: underline;
+}
