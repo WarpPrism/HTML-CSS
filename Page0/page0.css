@@ -41,11 +41,11 @@
 }
 
 #gift:hover {
-    transform: translate(5px, 0px);
-    -webkit-transform: translate(5px, 0px);
-    -ms-transform: translate(5px, 0px);
-    -moz-transform: translate(5px, 0px);
-    -o-transform: translate(5px, 0px);
+    transform: rotate(10deg);
+    -webkit-transform: rotate(10deg);
+    -ms-transform: rotate(10deg);
+    -moz-transform: rotate(10deg);
+    -o-transform: rotate(10deg);
 }
 
 #tipdiv {
@@ -112,4 +112,9 @@
     -ms-transition: all 1s ease-in-out;
     -moz-transition: all 1s ease-in-out;
     -o-transition: all 1s ease-in-out;
+}
+
+#ribbon:hover {
+    width: 310px;
+    background-size: 310px 186px;
 }

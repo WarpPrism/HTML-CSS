@@ -319,3 +319,18 @@ a:hover {
     color: purple;
     text-decoration: underline;
 }
+
+#redo {
+    display: block;
+    position: absolute;
+    right: 70px;
+    bottom: 0px;
+    margin: 20px;
+    text-decoration: none;
+    color: #FFF;
+}
+
+#redo:hover {
+    color: purple;
+    text-decoration: underline;
+}

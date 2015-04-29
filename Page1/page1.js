@@ -122,7 +122,7 @@ function startLissajousAnimation() {
             b.push(h);
             garden.createRandomBloom(h[0], h[1])
         }
-        if (s >= 50) {
+        if (s >= 70) {
             clearInterval(a);
             clearCanvas();
             clearCanvas();
@@ -149,7 +149,7 @@ function startLissajousAnimation() {
                     n = 2;
                     Fi = Math.PI / 2;
                     startLissajousAnimation();
-                    textdiv.style.width = "300px";
+                    textdiv.style.width = "310px";
                     textdiv.style.height = "90px";
                     changeText();
                     text2.innerHTML = "x = 200sin(t)<br />y = 200sin(2t + PI / 2)<br />Parabola<br />I start to rise when meeting you.";
@@ -167,7 +167,7 @@ function startLissajousAnimation() {
                 case 5:
                     Fi = Math.PI / 3;
                     startLissajousAnimation();
-                    textdiv.style.width = "250px";
+                    textdiv.style.width = "230px";
                     textdiv.style.height = "90px";
                     changeText();
                     text2.innerHTML = "x = 200sin(t)<br />y = 200sin(2t)<br />Besace<br />Making life beautiful?";
@@ -216,43 +216,7 @@ function startHeartAnimation() {
         }
         if (s >= -60) {
             clearInterval(a);
-            var endbtn = document.getElementById("endbtn");
-            var lang = document.getElementById("lang");
-            var theend = document.getElementById("theend");
-            wordsdiv.style.opacity = "1";
-            endbtn.style.opacity = "1";
-            lang.style.opacity = "1";
-            endbtn.onclick = function() {
-                theend.style.opacity = "1";
-                endcurtain.style.height = "100%";
-                /*this.style.opacity = "0";
-                lang.style.opacity = "0";*/
-                lang.innerHTML = "Thank";
-                this.innerHTML = "You";
-                lang.style.left = "400px";
-            }
-            
-            var textchange= function() {
-                var pattern = new RegExp("e");
-                var words = document.getElementById("words");
-                var str = words.innerHTML;
-                if (pattern.test(str)) {
-                    lang.innerHTML = "EN";
-                    words.innerHTML = "有的人平庸浅薄，<br /><br />有的人金玉其外，却败絮其中。<br /><br />但不经意间，我们都会遇到一个如彩虹般炫丽的人，<br /><br />倘若如此，其他人不过是浮云而已。<br /><br />————《怦然心动》";
-                } else {
-                    lang.innerHTML = "CN";
-                    words.innerHTML = "Some of us get dipped in flat,<br />Some in satin, some in gloss.<br />But every once in a while,<br />We will find someone who is iridescent.<br />And when we do,<br />Nothing else will ever compare.<br />&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;----<span>Flipped</span>";
-                }
-            }
-
-            wordsdiv.onclick = textchange;
-            lang.onclick = textchange;
-            /*words.onmouseout = function() {
-                var words = document.getElementById("words");
-                wordsdiv.style.background = "";
-                wordsdiv.style.color = "#000";
-                words.innerHTML = "Some of us get dipped in flat,<br />Some in satin, some in gloss.<br />But every once in a while,<br />We will find someone who is iridescent.<br />And when you do,<br />Nothing else will ever compare.";
-            }*/
+            afterTheHeartAnimation();
             return;
         } else {
             s += 0.2
@@ -285,4 +249,71 @@ function changeText() {
         text2.style.opacity = "1";
         text1.style.opacity = "0";
     }
+}
+
+function afterTheHeartAnimation() {
+
+    var endbtn = document.getElementById("endbtn");
+    var lang = document.getElementById("lang");
+    var theend = document.getElementById("theend");
+    var corner = document.getElementById("corner");
+    var redo = document.getElementById("redo");
+
+    corner.style.opacity = "1";
+    wordsdiv.style.opacity = "1";
+    endbtn.style.opacity = "1";
+    lang.style.opacity = "1";
+
+    endbtn.onclick = function() {
+        wordsdiv.onclick = null;
+        lang.onclick = null;
+        theend.style.opacity = "1";
+        endcurtain.style.height = "100%";
+        /*this.style.opacity = "0";
+        lang.style.opacity = "0";*/
+        lang.innerHTML = "Thank";
+        this.innerHTML = "You";
+        lang.style.left = "400px";
+    }
+
+    redo.onclick = function() {
+        wordsdiv.onclick = textchange;
+        lang.onclick = textchange;
+        theend.style.opacity = "0";
+        endcurtain.style.height = "0%";
+        /*this.style.opacity = "0";
+        lang.style.opacity = "0";*/
+        var pattern = new RegExp("e");
+        var words = document.getElementById("words");
+        var str = words.innerHTML;
+        if (pattern.test(str)) {
+            lang.innerHTML = "CN";
+        } else {
+            lang.innerHTML = "EN";
+        }
+        endbtn.innerHTML = "End";
+        lang.style.left = "420px";
+    }
+    
+    var textchange= function() {
+        var pattern = new RegExp("e");
+        var words = document.getElementById("words");
+        var str = words.innerHTML;
+        if (pattern.test(str)) {
+            lang.innerHTML = "EN";
+            words.innerHTML = "有的人平庸浅薄，<br /><br />有的人金玉其外，却败絮其中。<br /><br />但不经意间，我们都会遇到一个如彩虹般炫丽的人，<br /><br />倘若如此，其他人不过是浮云而已。<br /><br />&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;————《怦然心动》";
+        } else {
+            lang.innerHTML = "CN";
+            words.innerHTML = "Some of us get dipped in flat,<br />Some in satin, some in gloss.<br />But every once in a while,<br />We will find someone who is iridescent.<br />And when we do,<br />Nothing else will ever compare.<br />&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;----<span>Flipped</span>";
+        }
+    }
+    
+    wordsdiv.onclick = textchange;
+    lang.onclick = textchange;
+    /*words.onmouseout = function() {
+        var words = document.getElementById("words");
+        wordsdiv.style.background = "";
+        wordsdiv.style.color = "#000";
+        words.innerHTML = "Some of us get dipped in flat,<br />Some in satin, some in gloss.<br />But every once in a while,<br />We will find someone who is iridescent.<br />And when you do,<br />Nothing else will ever compare.";
+    }*/
 }
