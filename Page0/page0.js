@@ -14,6 +14,10 @@ window.onload = function() {
     startRibbonAnimation();
     setTimeout(showTip, 8000 + loadtime);
     setTimeout(showHead, 9000 + loadtime);
+
+    tipdiv.onclick = function() {
+        window.location.href = "../Page1/page1.html";
+    }
 }
 
 function init() {
@@ -95,3 +99,4 @@ function showTip() {
 function showHead() {
     headdiv.style.opacity = "1";
 }
+
