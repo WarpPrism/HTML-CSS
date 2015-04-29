@@ -1,7 +1,8 @@
 # To ?
-/*Developing......*/
 
-### Now stop for a while......
+** Developing...... **
+
+** Now stop for a while...... **
 
 This tiny project is mainly developed in the environment of Ubuntu 14.04.
 And the key point used in this project is the teconology of CSS3, HTML5 and some
@@ -20,4 +21,4 @@ still on the way to the peak of the fascinating web world.
 
 For using, open the "Click Me.html" in your browser, chrome/Firefox/IE 9+ on windows may be the best choice.
 
-### 2015 SYSU. EC. SS. ZhouJihao(In Sophomore)
+** 2015 SYSU. EC. SS. ZhouJihao(In Sophomore) **
