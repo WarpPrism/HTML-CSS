@@ -1,8 +1,6 @@
-# To ?
+### For ?
 
-**Developing......**
-
-**Now stop for a while......**
+**Introduction**
 
 * This tiny project is mainly developed in the environment of Ubuntu 14.04.
 And the key point used in this project is the teconology of CSS3, HTML5 and
@@ -23,7 +21,11 @@ am still on the way to the peak of the fanscinating web world. I am on the
 shoulder of hackerzhou, who is a real big-god. And I made this project based
 on his codes. Thanks for his excellent website:http://love.hackerzhou.me/.
 
-* For using, open the *"Click_Me.html"* in your browser, chrome/Firefox/IE 9+
+* For using, open the **"Click_Me.html"** in your browser, chrome/Firefox/IE 9+
 on windows may be the best choice.
+
+**简介**
+
+* 在windows环境下双击 **"Click_Me.html"**， 因为该项目在windows的浏览器环境下有较好的兼容性。
 
 **2015 SYSU. EC. SS. ZhouJihao(In Sophomore)**
