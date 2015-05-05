@@ -150,9 +150,8 @@ function startLissajousAnimation() {
                     Fi = Math.PI / 2;
                     startLissajousAnimation();
                     textdiv.style.width = "310px";
-                    textdiv.style.height = "90px";
                     changeText();
-                    text2.innerHTML = "x = 200sin(t)<br />y = 200sin(2t + PI / 2)<br />Parabola<br />I start to rise when meeting you.";
+                    text2.innerHTML = "x = 200sin(t)<br />y = 200sin(2t + PI / 2)<br />Parabola<br />And I also want you to have a rise.";
                     break;
                 //执罗诺双纽线
                 case 4:
@@ -161,16 +160,16 @@ function startLissajousAnimation() {
                     textdiv.style.width = "260px";
                     textdiv.style.height = "90px";
                     changeText();
-                    text1.innerHTML = "x = 200sin(t)<br />y = 200sin(2t)<br />Lemniscate<br />Shall we combine together?";
+                    text1.innerHTML = "x = 200sin(t)<br />y = 200sin(2t)<br />Lemniscate<br />I will give you what I have.";
                     break;
                 //besace曲线
                 case 5:
                     Fi = Math.PI / 3;
                     startLissajousAnimation();
-                    textdiv.style.width = "230px";
+                    textdiv.style.width = "240px";
                     textdiv.style.height = "90px";
                     changeText();
-                    text2.innerHTML = "x = 200sin(t)<br />y = 200sin(2t)<br />Besace<br />Making life beautiful?";
+                    text2.innerHTML = "x = 200sin(t)<br />y = 200sin(2t)<br />Besace<br />Making our life beautiful.";
                     break;
                 //心形线
                 case 6:
@@ -186,7 +185,7 @@ function startLissajousAnimation() {
                     text1.style.opacity = "1";
                     textdiv.style.transition = "all 1.5s linear";
                     text1.style.transition = "all 2s linear";
-                    text1.innerHTML = "x = 15 * 16[sin(t)]^3<br />y = -16 * (13cost - 5cos2t - 2cos3t - cos4t)<br />Heart<br />I am fond of you.<br />Let me take care of you.";
+                    text1.innerHTML = "x = 15 * 16[sin(t)]^3<br />y = -16 * (13cost - 5cos2t - 2cos3t - cos4t)<br />Heart<br />I love you.<br />";
                 default:
                     break;
             }
@@ -229,18 +228,6 @@ function clearCanvas() {
     canvas.width = canvas.width;
 }
 
-//bad code with high CPU consumption.
-/*function sleep(millseconds) {
-    var now = new Date();
-    var exitTime = now.getTime() + millseconds; 
-    while (true) {
-        now = new Date();
-        if (now.getTime() >= exitTime) {
-            return;
-        }
-    }
-}*/
-
 function changeText() {
     if (text1.style.opacity == "0") {
         text1.style.opacity = "1";
@@ -258,6 +245,7 @@ function afterTheHeartAnimation() {
     var theend = document.getElementById("theend");
     var corner = document.getElementById("corner");
     var redo = document.getElementById("redo");
+    var restart = document.getElementById("restart");
 
     corner.style.opacity = "1";
     wordsdiv.style.opacity = "1";
@@ -267,10 +255,11 @@ function afterTheHeartAnimation() {
     endbtn.onclick = function() {
         wordsdiv.onclick = null;
         lang.onclick = null;
+        redo.style.display = "block";
+        restart.style.display = "block";
         theend.style.opacity = "1";
         endcurtain.style.height = "100%";
-        /*this.style.opacity = "0";
-        lang.style.opacity = "0";*/
+        endcurtain.style.opacity = "1";
         lang.innerHTML = "Thank";
         this.innerHTML = "You";
         lang.style.left = "400px";
@@ -281,6 +270,7 @@ function afterTheHeartAnimation() {
         lang.onclick = textchange;
         theend.style.opacity = "0";
         endcurtain.style.height = "0%";
+        endcurtain.style.opacity = "0";
         /*this.style.opacity = "0";
         lang.style.opacity = "0";*/
         var pattern = new RegExp("e");
@@ -310,10 +300,4 @@ function afterTheHeartAnimation() {
     
     wordsdiv.onclick = textchange;
     lang.onclick = textchange;
-    /*words.onmouseout = function() {
-        var words = document.getElementById("words");
-        wordsdiv.style.background = "";
-        wordsdiv.style.color = "#000";
-        words.innerHTML = "Some of us get dipped in flat,<br />Some in satin, some in gloss.<br />But every once in a while,<br />We will find someone who is iridescent.<br />And when you do,<br />Nothing else will ever compare.";
-    }*/
 }

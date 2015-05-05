@@ -6,6 +6,7 @@
 
 a {
     text-decoration: none;
+    color: purple;
 }
 
 a:hover {
@@ -73,7 +74,8 @@ a:hover {
     height: 0px;
     position: absolute;
     top: 0px;
-    background: rgba(150,150,150,0.4);
+    opacity: 0;
+    background: rgba(150,150,150,0.3);
 
     transition:all 3s ease-in-out;
     -webkit-transition:all 3s ease-in-out;
@@ -289,8 +291,8 @@ a:hover {
     position: absolute;
     bottom: 10px;
     left: 50%;
-    width: 300px;
-    margin-left: -150px;
+    width: 400px;
+    margin-left: -200px;
     opacity: 0;
 
     transition: all 2s ease-in-out;
@@ -306,31 +308,17 @@ a:hover {
 }
 
 #restart {
-    display: block;
     position: absolute;
     right: 0px;
     bottom: 0px;
     margin: 20px;
-    text-decoration: none;
-    color: #FFF;
-}
-
-#restart:hover {
-    color: purple;
-    text-decoration: underline;
+    display: none;
 }
 
 #redo {
-    display: block;
     position: absolute;
     right: 70px;
     bottom: 0px;
     margin: 20px;
-    text-decoration: none;
-    color: #FFF;
-}
-
-#redo:hover {
-    color: purple;
-    text-decoration: underline;
+    display: none;
 }

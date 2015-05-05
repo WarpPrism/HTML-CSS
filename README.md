@@ -14,12 +14,12 @@ Specially, for chrome on Ubuntu 14.04, the font based on the system is not so
 suitable, so the UI maybe a little ugly, which indicates that the codes are ugly
 too T_T. While Firefox performs perfect.
 
-* Getting invoveld with the web field for only 5 months and amazed by the
+* Getting involved with the web field for only 5 months and amazed by the
 presentation ability that it provides, I just want to do more things. So 
-please forgive the drawbacks of this tiny work. I am not a NB man. And I
-am still on the way to the peak of the fanscinating web world. I am on the 
-shoulder of hackerzhou, who is a real big-god. And I made this project based
-on his codes. Thanks for his excellent website:http://love.hackerzhou.me/.
+please forgive the drawbacks in this tiny work. I am not a NB man. And I
+am still on the way to the peak of the fanscinating web world. And I stand
+on the shoulder of hackerzhou, who is a real big-god. And I made this project
+based on his codes. Thanks for his excellent website:http://love.hackerzhou.me/.
 
 * For using, open the **"Click_Me.html"** in your browser, chrome/Firefox/IE 9+
 on windows may be the best choice.
