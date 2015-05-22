@@ -1,4 +1,3 @@
-### For ?
 
 **Introduction**
 
@@ -14,6 +13,11 @@ Specially, for chrome on Ubuntu 14.04, the font based on the system is not so
 suitable, so the UI maybe a little ugly, which indicates that the codes are ugly
 too T_T. While Firefox performs perfect.
 
+* But this project doesn't cross device and doesn't cross screen. It supports 
+only 1365 * 768 screen or about. If you have a wide screen, sorry, it will not 
+display normally
+
+
 * Getting involved with the web field for only 5 months and amazed by the
 presentation ability that it provides, I just want to do more things. So 
 please forgive the drawbacks in this tiny work. I am not a NB man. And I
@@ -22,10 +26,7 @@ on the shoulder of hackerzhou, who is a real big-god. And I made this project
 based on his codes. Thanks for his excellent website:http://love.hackerzhou.me/.
 
 * For using, open the **"Click_Me.html"** in your browser, chrome/Firefox/IE 9+
-on windows may be the best choice.
-
-**简介**
-
-* 在windows环境下双击 **"Click_Me.html"**， 因为该项目在windows的浏览器环境下有较好的兼容性。
+may be the best choice. Also you need a PC with 1365 * 768 screen or about.
+Generally, most laptop can run correctly.
 
 **2015 SYSU. EC. SS. ZhouJihao(In Sophomore)**

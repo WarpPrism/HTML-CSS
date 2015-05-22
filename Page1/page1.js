@@ -150,6 +150,7 @@ function startLissajousAnimation() {
                     Fi = Math.PI / 2;
                     startLissajousAnimation();
                     textdiv.style.width = "310px";
+                    textdiv.style.height = "95px";
                     changeText();
                     text2.innerHTML = "x = 200sin(t)<br />y = 200sin(2t + PI / 2)<br />Parabola<br />And I also want you to have a rise.";
                     break;
