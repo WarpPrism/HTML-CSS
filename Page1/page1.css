@@ -4,6 +4,10 @@
     font-family: "Microsoft Yahei";
 }
 
+body {
+    background: #FFFFF4;
+}
+
 a {
     text-decoration: none;
     color: #0072E3;

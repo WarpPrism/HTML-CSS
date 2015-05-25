@@ -105,7 +105,7 @@ function getLissajousCurveCoordinate(s, n, Fi) {
 
 function startLissajousAnimation() {
     index++;
-    var s = -100;
+    var s = 0;
     var b = new Array();
     var a = setInterval(function() {
         var h = getLissajousCurveCoordinate(s, n, Fi);
@@ -113,7 +113,7 @@ function startLissajousAnimation() {
         for (var f = 0; f < b.length; f++) {
             var g = b[f];
             var j = Math.sqrt(Math.pow(g[0] - h[0], 2) + Math.pow(g[1] - h[1], 2));
-            if (j < Garden.options.bloomRadius.max * 1.3) {
+            if (j < Garden.options.bloomRadius.max * 1.2) {
                 e = false;
                 break;
             }
@@ -122,7 +122,7 @@ function startLissajousAnimation() {
             b.push(h);
             garden.createRandomBloom(h[0], h[1])
         }
-        if (s >= 70) {
+        if (s >= 55) {
             clearInterval(a);
             clearCanvas();
             clearCanvas();
@@ -138,11 +138,11 @@ function startLissajousAnimation() {
                     break;
                 //椭圆
                 case 2:
-                    Fi = Math.PI / 3;
+                    Fi = Math.PI / 4;
                     startLissajousAnimation();
                     textdiv.style.width = "310px";
                     changeText();
-                    text1.innerHTML = "x = 200sin(t)<br />y = 200sin(t + PI / 3)<br />Ellipse/Orbit<br />You provide the correct orbit for my life.";
+                    text1.innerHTML = "x = 200sin(t)<br />y = 200sin(t + PI / 4)<br />Ellipse/Orbit<br />You provide the correct orbit for my life.";
                     break;
                 //抛物线
                 case 3:
@@ -152,28 +152,30 @@ function startLissajousAnimation() {
                     textdiv.style.width = "310px";
                     textdiv.style.height = "95px";
                     changeText();
-                    text2.innerHTML = "x = 200sin(t)<br />y = 200sin(2t + PI / 2)<br />Parabola<br />And I also want you to have a rise.";
+                    text2.innerHTML = "x = 200sin(t)<br />y = 200sin(2t + PI / 2)<br />Parabola<br />And I also want you to be happy.";
                     break;
                 //执罗诺双纽线
                 case 4:
                     Fi = 0;
                     startLissajousAnimation();
-                    textdiv.style.width = "260px";
+                    textdiv.style.width = "275px";
                     textdiv.style.height = "90px";
                     changeText();
-                    text1.innerHTML = "x = 200sin(t)<br />y = 200sin(2t)<br />Lemniscate<br />I will give you what I have.";
+                    text1.innerHTML = "x = 200sin(t)<br />y = 200sin(2t)<br />Lemniscate<br />I want give you what I have.";
                     break;
                 //besace曲线
                 case 5:
+                    n = 4;
                     Fi = Math.PI / 3;
                     startLissajousAnimation();
-                    textdiv.style.width = "240px";
+                    textdiv.style.width = "260px";
                     textdiv.style.height = "90px";
                     changeText();
-                    text2.innerHTML = "x = 200sin(t)<br />y = 200sin(2t)<br />Besace<br />Making our life beautiful.";
+                    text2.innerHTML = "x = 200sin(t)<br />y = 200sin(4t + PI / 3)<br />Besace<br />Making life beautiful : )";
                     break;
                 //心形线
                 case 6:
+                    clearCanvas();
                     startHeartAnimation();
                     text2.style.display = "none";
                     textdiv.style.left = "730px";
@@ -186,18 +188,19 @@ function startLissajousAnimation() {
                     text1.style.opacity = "1";
                     textdiv.style.transition = "all 1.5s linear";
                     text1.style.transition = "all 2s linear";
-                    text1.innerHTML = "x = 15 * 16[sin(t)]^3<br />y = -16 * (13cost - 5cos2t - 2cos3t - cos4t)<br />Heart<br />I love you.<br />";
+                    text1.innerHTML = "x = 15 * 16[sin(t)]^3<br />y = -16 * (13cost - 5cos2t - 2cos3t - cos4t)<br />Heart<br />I am fond of you.<br />";
                 default:
                     break;
             }
         } else {
             s += 0.2
         }
-    }, 10)
+    }, 50)
 }
 
 function startHeartAnimation() {
-    var s = -80;
+    clearCanvas();
+    var s = -70;
     var b = new Array();
     var a = setInterval(function() {
         var h = getHeartCurveCoordinate(s);
@@ -214,14 +217,14 @@ function startHeartAnimation() {
             b.push(h);
             garden.createRandomBloom(h[0], h[1])
         }
-        if (s >= -60) {
+        if (s >= -50) {
             clearInterval(a);
             afterTheHeartAnimation();
             return;
         } else {
             s += 0.2
         }
-    }, 50)
+    }, 100)
 }
 
 function clearCanvas() {
