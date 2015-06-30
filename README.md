@@ -30,3 +30,10 @@ may be the best choice. Also you need a PC with 1365 * 768 screen or about.
 Generally, most laptop can run correctly.
 
 **2015 SYSU. EC. SS. ZhouJihao(In Sophomore)**
+
+
+> 只有你好奇雪白、月白与霜白之间微妙的差异 
+只有你痴迷于文字的形状超越其语言用途的美学意义 
+只有你能从音乐旋律中看见绚烂的色彩与流动的形状 
+只有你会为夕阳下旋转鸟笼的斑驳光影驻足 
+只有你…… 
